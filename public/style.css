@@ -1,7 +1,9 @@
+@font-face { font-family: SourceCodePro; src: url('/fonts/SourceCodePro.ttf'); } 
+
 body {
   background-color: black;
   color: white;
-  font-family: Verdana;
+  font-family: SourceCodePro, Verdana;
 }
 
 p {
@@ -34,6 +36,7 @@ a:hover, a:active {
   outline-style: groove;
   outline-color: white;
   outline-width: thick;
+  background-color: black;
 }
 
 
@@ -45,4 +48,28 @@ img {
   image-rendering: pixelated;
   image-rendering: optimize-contrast;
   -ms-interpolation-mode: nearest-neighbor;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.link {
+  position: relative;
+  padding: 10px;
+  margin: 5px;
+  outline-style: groove;
+  outline-color: white;
+  outline-width: thin;
+  background-color: black;
+  float: left;
+}
+
+.links {
+  position: fixed;
+  display: flex;
+  bottom: 15px;
+  left: 15px;
 }
