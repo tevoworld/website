@@ -1,4 +1,10 @@
-@font-face { font-family: SourceCodePro; src: url('/fonts/SourceCodePro.ttf'); } 
+@font-face { font-family: SourceCodePro; src: url('/fonts/SourceCodePro.ttf'); }
+
+@font-face { font-family: Silkscreen; src: url('/fonts/Silkscreen.ttf'); }
+
+@font-face { font-family: Silkscreen-Bold; src: url('/fonts/Silkscreen-Bold.ttf'); }
+
+@font-face { font-family: GoudyBookletter1911; src: url('/fonts/GoudyBookletter1911.ttf'); }
 
 body {
   background-color: black;
@@ -7,7 +13,7 @@ body {
 }
 
 p {
- font-family: Arial; 
+ font-family: Arial;
 }
 
 a:link, a:visited {
@@ -20,6 +26,7 @@ a:hover, a:active {
 }
 
 .underconstruction {
+  font-family: Silkscreen, Arial;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -27,6 +34,11 @@ a:hover, a:active {
   margin: -100px;
   width: 200px;
   height: 100px;
+  padding-block: 25px;
+  outline-style: groove;
+  background-color: black;
+  outline-color: white;
+  outline-width: thick;
 }
 
 .homebackground {
