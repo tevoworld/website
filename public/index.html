@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tevoworld</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
@@ -12,12 +12,15 @@
       <img src="/images/tevoworld.png">
     </div>
 
-    <div class="underconstruction">
-      <img src="/images/load.gif" style="width:48px;height:48px;">
-      <br />
-      <br />
-      under construction
+    <div class="middle_box">
+      <h1 class="dark_text" style="display:inline-block;">welcome to</h1>
+      <h1 class="dark_text" style="display:inline-block;">tevoworld</h1>
+
+      <h3 id="RandomMessage">. . .</h3>
+
+      <p style="text-align: left;">This is a personal website developed by tevo, otherwise known as televisionia. This website is new and many works are underway, and I will be posting live updates on Mastodon about the project. If you wish to view the source code or give any suggestions for the website, visit the <a href="https://github.com/tevoworld/website">Github repository</a>, or alternatively, toot me or post with the #tevoworld tag on Mastodon.</p>
     </div>
+    
 
     <div class="links">
       <a class="link" href="https://github.com/tevoworld">Github</a>
@@ -25,4 +28,18 @@
     </div>
 
   </body>
+
+  <script>
+    var messages = [
+    "Dreams, dreams, dreams. Why do they never come true?",
+    "Visit tevoworld, read tevoworld, love tevoworld.",
+    "What's a tevoworld? What's a neocities?",
+    "Featuring: you and your soul.",
+    "Come back, next week, for more dreams.",
+    "One who wishes for love, wishes for tevoworld.",
+    "Please, please, we love you!"
+    ];
+
+    document.getElementById('RandomMessage').textContent = messages[Math.floor(Math.random()*messages.length)];
+  </script>
 </html>

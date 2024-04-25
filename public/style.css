@@ -1,5 +1,7 @@
 @font-face { font-family: SourceCodePro; src: url('/fonts/SourceCodePro.ttf'); }
 
+@font-face { font-family: JuliusSansOne; src: url('/fonts/JuliusSansOne.ttf'); }
+
 @font-face { font-family: Silkscreen; src: url('/fonts/Silkscreen.ttf'); }
 
 @font-face { font-family: Silkscreen-Bold; src: url('/fonts/Silkscreen-Bold.ttf'); }
@@ -10,6 +12,7 @@ body {
   background-color: black;
   color: white;
   font-family: SourceCodePro, Verdana;
+  font-size: large;
 }
 
 p {
@@ -84,4 +87,38 @@ img {
   display: flex;
   bottom: 15px;
   left: 15px;
+}
+
+.dark_text {
+  background:url('/images/dark_static.gif');
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: JuliusSansOne, Arial;
+}
+
+.color_text {
+  background:url('/images/color_static.gif');
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, 0.1);
+  font-family: Silkscreen, Arial;
+}
+
+.middle_box {
+  position:relative;
+  text-align: center;
+  top:50%;
+  left:50%;
+  outline-style: groove;
+  background-color: black;
+  outline-color: white;
+  outline-width: thick;
+  width: 50%;
+  height: 10%;
+  padding-block: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  transform: translate(-50%, 0); 
 }
