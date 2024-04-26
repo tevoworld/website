@@ -10,11 +10,11 @@ ctx.fillStyle = '#000';
 ctx.fillRect(0, 0, w, h);
 
 function matrix () {
-  ctx.fillStyle = '#000000';
+  ctx.fillStyle = canvas.dataset.colorfill;
   ctx.fillRect(0, 0, w, h);
   
-  ctx.fillStyle = '#3F3F3F';
-  ctx.font = '15pt monospace';
+  ctx.fillStyle = canvas.dataset.color;
+  ctx.font = '15pt Silkscreen';
   
   ypos.forEach((y, ind) => {
     const text = String.fromCharCode(Math.random() * 128);
