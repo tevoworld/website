@@ -13,6 +13,7 @@ function load_post(post) {
 };
 
 function load_list() {
+    console.log("Loading list...")
     var list_box = document.getElementById("post_list");
 
     $.ajax({url: dir}).then(function(html) {
