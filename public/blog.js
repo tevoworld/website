@@ -15,12 +15,15 @@ function load_post(post) {
 function load_list() {
     console.log("Loading list...")
     var list_box = document.getElementById("post_list");
+    console.log(list_box)
 
     $.ajax({url: dir}).then(function(html) {
         var ndocument = $(html);
+        console.log(ndocument)
 
         ndocument.find('a[href$=".html"]').each(function() {
             var Name = $(this).attr('title').slice(0, $(this).attr('title').lastIndexOf('.'));
+            console.log(Name)
             var Url = $(this).attr('href');
             
             var new_div = document.createElement('div');
