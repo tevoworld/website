@@ -19,7 +19,8 @@ function load_post(post) {
 function load_list() {
     var list_box = document.getElementById("post_list");
 
-    for (page_name in pages) {
+    for (page_index in pages) {
+        var page_name = pages[page_index]
         var page = dir + page_name + ".html"
 
         var new_div = document.createElement('div');
