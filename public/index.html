@@ -8,41 +8,80 @@
   </head>
   <body>
 
-    <div class="header">
+    <div class="header_index" id="header_div">
       <img src="/images/tevoworld.png">
-    </div>
-
-    <div class="index_box">
-      <h1 class="dark_text" style="display:inline-block;">welcome to</h1>
-      <h1 class="dark_text" style="display:inline-block;">tevoworld</h1>
-
-      <h3 id="RandomMessage">. . .</h3>
-
-      <p style="text-align: left;">This is a personal website developed by tevo, otherwise known as televisionia. This website is new and many works are underway, and I will be posting live updates on Mastodon about the project. If you wish to view the source code or give any suggestions for the website, visit the <a href="https://github.com/tevoworld/website">Github repository</a>. If you wish to give feedback or just talk to me, toot me or post with the #tevoworld tag on Mastodon.</p>
-
-      <a href="/home.html" style="text-decoration: none;"><h2 style="display:inline-block;">[ <h2 class="color_text" style="display:inline-block;">ENTER</h2><h2 style="display:inline-block;"> ]</h2></a>
+      <p style="text-align: center;" id="subtext">. . .</p>
+      <p style="text-align: center;" id="subtext2"></p>
     </div>
     
-
-    <div class="links">
-      <a class="link" href="https://github.com/tevoworld">Github</a>
-      <a class="link" rel="me" href="https://cyberplace.social/@tevo">Mastodon</a>
-    </div>
-
   </body>
 
   <script>
-    var messages = [
-    "Dreams, dreams, dreams. Why do they never come true?",
-    "Visit tevoworld, read tevoworld, love tevoworld.",
-    "What's a tevoworld? What's a neocities?",
-    "Featuring: you and your soul.",
-    "Come back, next week, for more dreams.",
-    "One who wishes for love, wishes for tevoworld.",
-    "Please, please, we love you!",
-    "Present day, present time..."
-    ];
+    if (localStorage.currentpage == null) {
+      localStorage.currentpage = "entry.html"
+    }
 
-    document.getElementById('RandomMessage').textContent = messages[Math.floor(Math.random()*messages.length)];
+    var header_div = document.getElementById("header_div");
+
+    var subtext = document.getElementById("subtext");
+    var subtext2 = document.getElementById("subtext2");
+
+    var input_box;
+
+    var input_button;
+
+    function type_writer(element, txt, speed, i=0) {
+      if (i < txt.length) {
+        element.innerHTML += txt.charAt(i);
+        setTimeout(type_writer, speed, element, txt, speed, i+1);
+        };
+    };
+
+    function redirect(url) {
+      window.location.href = url;
+    };
+
+    function start_redirect() {
+      subtext.innerHTML = "";
+      setTimeout(type_writer, 1000, subtext, "Welcome, " + localStorage.name + ".", 50);
+      subtext2.innerHTML = "";
+      setTimeout(type_writer, 2000, subtext2, "Redirecting...", 50);
+      setTimeout(redirect, 3000, localStorage.currentpage);
+    };
+
+    function entered_name() {
+      if (input_box.value != "") {
+        localStorage.name = input_box.value;
+        input_box.remove();
+        input_button.remove();
+        start_redirect();
+      };
+    };
+
+    
+    function create_input_box(parent) {
+      input_box = document.createElement("input");
+      input_box.type = "text";
+      input_box.className = "input_box";
+      header_div.appendChild(input_box);
+
+      input_button = document.createElement("button");
+      input_button.type = "button";
+      input_button.onclick=function() {entered_name(input_box.innerHTML);};
+      input_button.innerHTML="Confirm";
+      input_button.className = "input_box";
+      header_div.appendChild(input_button);
+ 
+    };
+
+    if (localStorage.name == null || localStorage.name == "") {
+      localStorage.name = "";
+      subtext.innerHTML = "";
+      setTimeout(type_writer, 2500, subtext, "Please enter a name.", 50);
+      setTimeout(create_input_box, 4000);
+    } else {
+      setTimeout(start_redirect, 1000)
+    };
+    
   </script>
 </html>

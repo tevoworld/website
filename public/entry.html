@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>tevoworld</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+
+    <script src="./global.js"></script>
+
+    <div class="header">
+      <img src="/images/tevoworld.png">
+    </div>
+
+    <div class="index_box">
+      <h1 class="dark_text" style="display:inline-block;">welcome to</h1>
+      <h1 class="dark_text" style="display:inline-block;">tevoworld</h1>
+
+      <h3 id="RandomMessage">. . .</h3>
+
+      <p style="text-align: left;">
+
+        Hello <b class="name"></b>. This is a personal website developed by tevo, otherwise known as novi or televisionia. This website will get updated occasionally. If you wish to view the source code, visit the <a href="https://github.com/tevoworld/website">Github repository</a>.
+
+        <br /><br />
+
+        Last updated on the 1st of December, 2024.
+
+
+
+      </p>
+
+      <a href="/home.html" style="text-decoration: none;"><h2 style="display:inline-block;">[ <h2 class="color_text" style="display:inline-block;">ENTER</h2><h2 style="display:inline-block;"> ]</h2></a>
+    </div>
+    
+
+    <div class="links">
+      <a class="link" href="https://github.com/tevoworld">Github</a>
+      <a class="link" rel="me" href="https://cyberplace.social/@tevo">Mastodon</a>
+    </div>
+
+  </body>
+
+  <script>
+    var messages = [
+    "Visit again later!",
+    "Tevo says hi.",
+    "Open to everyone!",
+    "Enjoy your stay."
+    ];
+
+    document.getElementById('RandomMessage').textContent = messages[Math.floor(Math.random()*messages.length)];
+
+  </script>
+
+  
+</html>
