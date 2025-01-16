@@ -14,6 +14,18 @@ body {
   font-family: SourceCodePro, Verdana;
 }
 
+.tevo_sky_body {
+  background-image: url('/images/purple_clouds.png');
+  animation: bgScroll 10s linear infinite;
+}
+
+
+.rei_army {
+  background-image: url('/images/crap_dump/crusty_rei_plush.png');
+  animation: bgArmyScroll 2s linear infinite;
+}
+
+
 p {
  font-family: Arial;
 }
@@ -41,7 +53,7 @@ a:hover, a:active {
   background-color: black;
   outline-color: white;
   outline-width: thick;
-}
+} 
 
 .homebackground {
   margin: 10px;
@@ -262,12 +274,60 @@ img {
   color: black;
 }
 
+.draggable_box {
+  cursor: move;
+  position: absolute;
+  outline-style: groove;
+  background-color: black;
+  outline-color: #ffffff;
+  outline-width: thick;
+  padding-block: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 10px 10px 5px 20px hsla(0, 0%, 0%, 0.500);
+}
+
+.basic_box {
+  position: absolute;
+  outline-style: groove;
+  background-color: black;
+  outline-color: #ffffff;
+  outline-width: thick;
+  padding-block: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 10px 10px 5px 20px hsla(0, 0%, 0%, 0.500);
+}
 
 
+.top_box_border {
+  position: fixed;
+  top: 0;
+  width: calc(100% + 10px);
+  align-self: center;
+  left: 50%;
+  height: 15px;
+  transform: translate(-50%, -15px);
+  background: #dbdbdb;
+}
 
+@keyframes bgScroll {
+  0% {
+    background-position : 0px 0px
+  }
+  100% {
+    background-position : -512px 0px
+  }
+}
 
-
-
+@keyframes bgArmyScroll {
+  0% {
+    background-position : 0px 0px
+  }
+  100% {
+    background-position : -150px 217px
+  }
+}
 
 @keyframes fadein {
   0% {

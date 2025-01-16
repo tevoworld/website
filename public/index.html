@@ -3,7 +3,7 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>tevoworld</title>
+    <title>initializing...</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
@@ -16,7 +16,7 @@
     
   </body>
 
-  <script>
+  <script>  
     if (localStorage.currentpage == null) {
       localStorage.currentpage = "entry.html"
     }
@@ -34,7 +34,7 @@
       if (i < txt.length) {
         element.innerHTML += txt.charAt(i);
         setTimeout(type_writer, speed, element, txt, speed, i+1);
-        };
+      };
     };
 
     function redirect(url) {
