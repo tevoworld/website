@@ -4,19 +4,19 @@
 
     <meta charset="UTF-8">
     <title>initializing...</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
 
     <div class="header_index" id="header_div">
-      <img src="/images/tevoworld.png">
+      <img src="images/tevoworld.png">
       <p style="text-align: center;" id="subtext">. . .</p>
       <p style="text-align: center;" id="subtext2"></p>
     </div>
-    
+
   </body>
 
-  <script>  
+  <script>
     if (localStorage.currentpage == null) {
       localStorage.currentpage = "entry.html"
     }
@@ -58,7 +58,7 @@
       };
     };
 
-    
+
     function create_input_box(parent) {
       input_box = document.createElement("input");
       input_box.type = "text";
@@ -71,7 +71,7 @@
       input_button.innerHTML="Confirm";
       input_button.className = "input_box";
       header_div.appendChild(input_button);
- 
+
     };
 
     if (localStorage.name == null || localStorage.name == "") {
@@ -82,6 +82,6 @@
     } else {
       setTimeout(start_redirect, 1000)
     };
-    
+
   </script>
 </html>
