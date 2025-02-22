@@ -12,17 +12,23 @@ body {
   background-color: black;
   color: white;
   font-family: SourceCodePro, Verdana;
+  image-rendering: crisp-edges;
 }
 
 .tevo_sky_body {
   background-image: url('images/purple_clouds.png');
   animation: bgScroll 10s linear infinite;
+  overflow: auto;
+  overflow-y: hidden;
+  width: 8000px;
+  image-rendering: pixelated;
 }
 
 
 .rei_army {
   background-image: url('images/crap_dump/crusty_rei_plush.png');
   animation: bgArmyScroll 2s linear infinite;
+  image-rendering: crisp-edges;
 }
 
 
@@ -156,11 +162,12 @@ img {
 }
 
 .page_container {
-  max-width: 900px;
+  max-width: 1200px;
+  min-width: 800px;
   word-wrap: break-word;
   transform: translate(-50%, 0);
   left:50%;
-  position:absolute;
+  position: absolute;
   text-align: center;
   padding: 10px;
   margin: center;
@@ -168,7 +175,6 @@ img {
   margin-top: 100px;
   margin-bottom: 100px;
   justify-content: center;
-
 }
 
 .page_entry {
@@ -336,4 +342,77 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+.sky_dock {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  z-index: 10;
+}
+
+.sky_dock ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sky_dock li {
+  float: left;
+  margin: 0;
+  list-style: none;
+  display: block;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  padding: 0;
+  background-image: url(./images/dock_icons/dock_frame.png);
+  image-rendering: pixelated;
+}
+
+
+.sky_dock a {
+  padding: 3px 12px;
+  text-decoration: none;
+  color: #999;
+  line-height: 100%;
+  display: block;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  padding:0;
+  line-height: 0;
+  font-size: 0;
+  color: transparent;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.sky_dock a#top {background-image: url(./images/dock_icons/dock_globe.ico)}
+.sky_dock a#home {background-image: url(./images/dock_icons/dock_home.ico)}
+.sky_dock a#room {background-image: url(./images/dock_icons/dock_picture.ico)}
+
+.sky_dock a:hover {color: #BBB}
+
+.tooltiptext {
+  visibility: hidden;
+  font-size: 15px;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  text-align: center;
+  border-radius: 6px;
+  white-space: nowrap;
+  padding: 5px 5px;
+  
+  position: relative;
+  z-index: 11;
+  left: calc(100% + 5px);
+  top: 50%;
+}
+
+a:hover .tooltiptext {
+  visibility: visible;
 }
