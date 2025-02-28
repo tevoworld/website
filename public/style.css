@@ -1,12 +1,27 @@
-@font-face { font-family: SourceCodePro; src: url('/fonts/SourceCodePro.ttf'); }
+@font-face {
+  font-family: SourceCodePro;
+  src: url("/fonts/SourceCodePro.ttf");
+}
 
-@font-face { font-family: JuliusSansOne; src: url('/fonts/JuliusSansOne.ttf'); }
+@font-face {
+  font-family: JuliusSansOne;
+  src: url("/fonts/JuliusSansOne.ttf");
+}
 
-@font-face { font-family: Silkscreen; src: url('/fonts/Silkscreen.ttf'); }
+@font-face {
+  font-family: Silkscreen;
+  src: url("/fonts/Silkscreen.ttf");
+}
 
-@font-face { font-family: Silkscreen-Bold; src: url('/fonts/Silkscreen-Bold.ttf'); }
+@font-face {
+  font-family: Silkscreen-Bold;
+  src: url("/fonts/Silkscreen-Bold.ttf");
+}
 
-@font-face { font-family: GoudyBookletter1911; src: url('/fonts/GoudyBookletter1911.ttf'); }
+@font-face {
+  font-family: GoudyBookletter1911;
+  src: url("/fonts/GoudyBookletter1911.ttf");
+}
 
 body {
   background-color: black;
@@ -16,7 +31,7 @@ body {
 }
 
 .tevo_sky_body {
-  background-image: url('images/purple_clouds.png');
+  background-image: url("images/purple_clouds.png");
   animation: bgScroll 10s linear infinite;
   overflow: auto;
   overflow-y: hidden;
@@ -24,23 +39,23 @@ body {
   image-rendering: pixelated;
 }
 
-
 .rei_army {
-  background-image: url('images/crap_dump/crusty_rei_plush.png');
+  background-image: url("images/crap_dump/crusty_rei_plush.png");
   animation: bgArmyScroll 2s linear infinite;
   image-rendering: crisp-edges;
 }
 
-
 p {
- font-family: Arial;
+  font-family: Arial;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: white;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   background-color: white;
   color: black;
 }
@@ -70,7 +85,6 @@ a:hover, a:active {
   outline-width: thick;
   background-color: black;
 }
-
 
 img {
   image-rendering: optimizeSpeed;
@@ -116,7 +130,7 @@ img {
 }
 
 .dark_text {
-  background:url('images/dark_static.gif');
+  background: url("images/dark_static.gif");
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -125,7 +139,7 @@ img {
 }
 
 .color_text {
-  background:url('images/color_static.gif');
+  background: url("images/color_static.gif");
   background-clip: text;
   -webkit-background-clip: text;
   color: rgba(255, 255, 255, 0.1);
@@ -146,8 +160,8 @@ img {
   word-wrap: break-word;
   position: relative;
   text-align: center;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   outline-style: groove;
   background-color: black;
   outline-color: white;
@@ -158,7 +172,6 @@ img {
   padding-left: 2%;
   padding-right: 2%;
   transform: translate(-50%, 0);
-
 }
 
 .page_container {
@@ -166,7 +179,7 @@ img {
   min-width: 800px;
   word-wrap: break-word;
   transform: translate(-50%, 0);
-  left:50%;
+  left: 50%;
   position: absolute;
   text-align: center;
   padding: 10px;
@@ -178,7 +191,7 @@ img {
 }
 
 .page_entry {
-  position:relative;
+  position: relative;
   text-align: left;
   margin-left: 30px;
   margin-top: 30px;
@@ -191,11 +204,11 @@ img {
   padding-block: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  overflow-y:auto;
+  overflow-y: auto;
 }
 
 .page_entry_skinny {
-  position:relative;
+  position: relative;
   text-align: center;
   margin-left: 15px;
   margin-top: 15px;
@@ -215,8 +228,8 @@ img {
 }
 
 #rain_canvas {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: -999999999;
 }
@@ -226,8 +239,8 @@ img {
   height: 500px;
   word-wrap: break-word;
   transform: translate(-50%, 0);
-  left:60%;
-  position:absolute;
+  left: 60%;
+  position: absolute;
   text-align: center;
   padding: 10px;
   margin: center;
@@ -242,8 +255,8 @@ img {
   height: 500px;
   word-wrap: break-word;
   transform: translate(-50%, 0);
-  left:-200px;
-  position:absolute;
+  left: -200px;
+  position: absolute;
   text-align: center;
   padding: 10px;
   margin: center;
@@ -255,11 +268,11 @@ img {
   background-color: black;
   outline-color: white;
   outline-width: thick;
-  overflow-y:auto;
+  overflow-y: auto;
 }
 
 .blog_list_entry {
-  position:relative;
+  position: relative;
   text-align: center;
   margin-left: 10px;
   margin-top: 10px;
@@ -290,7 +303,7 @@ img {
   padding-block: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  box-shadow: 10px 10px 5px 20px hsla(0, 0%, 0%, 0.500);
+  box-shadow: 10px 10px 5px 20px hsla(0, 0%, 0%, 0.5);
 }
 
 .basic_box {
@@ -302,9 +315,8 @@ img {
   padding-block: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  box-shadow: 10px 10px 5px 20px hsla(0, 0%, 0%, 0.500);
+  box-shadow: 10px 10px 5px 20px hsla(0, 0%, 0%, 0.5);
 }
-
 
 .top_box_border {
   position: fixed;
@@ -319,19 +331,19 @@ img {
 
 @keyframes bgScroll {
   0% {
-    background-position : 0px 0px
+    background-position: 0px 0px;
   }
   100% {
-    background-position : -512px 0px
+    background-position: -512px 0px;
   }
 }
 
 @keyframes bgArmyScroll {
   0% {
-    background-position : 0px 0px
+    background-position: 0px 0px;
   }
   100% {
-    background-position : -150px 217px
+    background-position: -150px 217px;
   }
 }
 
@@ -372,7 +384,6 @@ img {
   image-rendering: pixelated;
 }
 
-
 .sky_dock a {
   padding: 3px 12px;
   text-decoration: none;
@@ -382,7 +393,7 @@ img {
   width: 64px;
   height: 64px;
   border: 0;
-  padding:0;
+  padding: 0;
   line-height: 0;
   font-size: 0;
   color: transparent;
@@ -391,11 +402,19 @@ img {
   background-position: center center;
 }
 
-.sky_dock a#top {background-image: url(./images/dock_icons/dock_globe.ico)}
-.sky_dock a#home {background-image: url(./images/dock_icons/dock_home.ico)}
-.sky_dock a#room {background-image: url(./images/dock_icons/dock_picture.ico)}
+.sky_dock a#top {
+  background-image: url(./images/dock_icons/dock_globe.ico);
+}
+.sky_dock a#home {
+  background-image: url(./images/dock_icons/dock_home.ico);
+}
+.sky_dock a#room {
+  background-image: url(./images/dock_icons/dock_picture.ico);
+}
 
-.sky_dock a:hover {color: #BBB}
+.sky_dock a:hover {
+  color: #bbb;
+}
 
 .tooltiptext {
   visibility: hidden;
@@ -406,7 +425,7 @@ img {
   border-radius: 6px;
   white-space: nowrap;
   padding: 5px 5px;
-  
+
   position: relative;
   z-index: 11;
   left: calc(100% + 5px);

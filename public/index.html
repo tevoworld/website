@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>initializing...</title>
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all" />
   </head>
   <body>
-
     <div class="header_index" id="header_div">
-      <img src="images/tevoworld.png">
-      <p style="text-align: center;" id="subtext">. . .</p>
-      <p style="text-align: center;" id="subtext2"></p>
+      <img src="images/tevoworld.png" />
+      <p style="text-align: center" id="subtext">. . .</p>
+      <p style="text-align: center" id="subtext2"></p>
     </div>
-
   </body>
 
   <script>
     if (localStorage.currentpage == null) {
-      localStorage.currentpage = "entry.html"
+      localStorage.currentpage = "entry.html";
     }
 
     var header_div = document.getElementById("header_div");
@@ -30,24 +27,30 @@
 
     var input_button;
 
-    function type_writer(element, txt, speed, i=0) {
+    function type_writer(element, txt, speed, i = 0) {
       if (i < txt.length) {
         element.innerHTML += txt.charAt(i);
-        setTimeout(type_writer, speed, element, txt, speed, i+1);
-      };
-    };
+        setTimeout(type_writer, speed, element, txt, speed, i + 1);
+      }
+    }
 
     function redirect(url) {
       window.location.href = url;
-    };
+    }
 
     function start_redirect() {
       subtext.innerHTML = "";
-      setTimeout(type_writer, 1000, subtext, "Welcome, " + localStorage.name + ".", 50);
+      setTimeout(
+        type_writer,
+        1000,
+        subtext,
+        "Welcome, " + localStorage.name + ".",
+        50
+      );
       subtext2.innerHTML = "";
       setTimeout(type_writer, 2000, subtext2, "Redirecting...", 50);
       setTimeout(redirect, 3000, localStorage.currentpage);
-    };
+    }
 
     function entered_name() {
       if (input_box.value != "") {
@@ -55,9 +58,8 @@
         input_box.remove();
         input_button.remove();
         start_redirect();
-      };
-    };
-
+      }
+    }
 
     function create_input_box(parent) {
       input_box = document.createElement("input");
@@ -67,12 +69,13 @@
 
       input_button = document.createElement("button");
       input_button.type = "button";
-      input_button.onclick=function() {entered_name(input_box.innerHTML);};
-      input_button.innerHTML="Confirm";
+      input_button.onclick = function () {
+        entered_name(input_box.innerHTML);
+      };
+      input_button.innerHTML = "Confirm";
       input_button.className = "input_box";
       header_div.appendChild(input_button);
-
-    };
+    }
 
     if (localStorage.name == null || localStorage.name == "") {
       localStorage.name = "";
@@ -80,8 +83,7 @@
       setTimeout(type_writer, 2500, subtext, "Please enter a name.", 50);
       setTimeout(create_input_box, 4000);
     } else {
-      setTimeout(start_redirect, 1000)
-    };
-
+      setTimeout(start_redirect, 1000);
+    }
   </script>
 </html>
