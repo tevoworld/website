@@ -1,26 +1,31 @@
 @font-face {
   font-family: SourceCodePro;
-  src: url("/fonts/SourceCodePro.ttf");
+  src: url("fonts/SourceCodePro.ttf");
+}
+
+@font-face {
+  font-family: PixelifySans;
+  src: url("fonts/PixelifySans.ttf");
 }
 
 @font-face {
   font-family: JuliusSansOne;
-  src: url("/fonts/JuliusSansOne.ttf");
+  src: url("fonts/JuliusSansOne.ttf");
 }
 
 @font-face {
   font-family: Silkscreen;
-  src: url("/fonts/Silkscreen.ttf");
+  src: url("fonts/Silkscreen.ttf");
 }
 
 @font-face {
   font-family: Silkscreen-Bold;
-  src: url("/fonts/Silkscreen-Bold.ttf");
+  src: url("fonts/Silkscreen-Bold.ttf");
 }
 
 @font-face {
   font-family: GoudyBookletter1911;
-  src: url("/fonts/GoudyBookletter1911.ttf");
+  src: url("fonts/GoudyBookletter1911.ttf");
 }
 
 body {
@@ -380,7 +385,7 @@ img {
   height: 64px;
   border: 0;
   padding: 0;
-  background-image: url(./images/dock_icons/dock_frame.png);
+  background-image: url(images/dock_icons/dock_frame.png);
   image-rendering: pixelated;
 }
 
@@ -403,13 +408,13 @@ img {
 }
 
 .sky_dock a#top {
-  background-image: url(./images/dock_icons/dock_globe.ico);
+  background-image: url(images/dock_icons/dock_globe.ico);
 }
 .sky_dock a#home {
-  background-image: url(./images/dock_icons/dock_home.ico);
+  background-image: url(images/dock_icons/dock_home.ico);
 }
 .sky_dock a#room {
-  background-image: url(./images/dock_icons/dock_picture.ico);
+  background-image: url(images/dock_icons/dock_picture.ico);
 }
 
 .sky_dock a:hover {
