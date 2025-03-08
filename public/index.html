@@ -8,8 +8,13 @@
   <body>
     <div class="header_index" id="header_div">
       <img src="images/tevoworld.png" />
-      <p style="text-align: center; font-family: PixelifySans;" id="subtext">. . .</p>
-      <p style="text-align: center; font-family: PixelifySans;" id="subtext2"></p>
+      <p style="text-align: center; font-family: PixelifySans" id="subtext">
+        . . .
+      </p>
+      <p
+        style="text-align: center; font-family: PixelifySans"
+        id="subtext2"
+      ></p>
     </div>
   </body>
 
@@ -65,6 +70,7 @@
       input_box = document.createElement("input");
       input_box.type = "text";
       input_box.className = "input_box";
+      input_box.style = "font-family: PixelifySans";
       header_div.appendChild(input_box);
 
       input_button = document.createElement("button");
@@ -74,6 +80,7 @@
       };
       input_button.innerHTML = "Confirm";
       input_button.className = "input_box";
+      input_button.style = "font-family: PixelifySans";
       header_div.appendChild(input_button);
     }
 

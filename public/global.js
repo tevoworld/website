@@ -9,6 +9,17 @@ if (localStorage.name == "") {
 }
 
 window.addEventListener("load", function () {
+  var time_text = document.getElementById("time_text");
+
+  if (time_text) {
+    function updateLocalTime() {
+      var now = new Date();
+      var timeString = now.toLocaleTimeString();
+      time_text.textContent = timeString;
+    }
+    setInterval(updateLocalTime, 1000);
+  }
+
   var names = document.getElementsByClassName("name");
 
   for (var i = 0; i < names.length; ++i) {
@@ -57,6 +68,5 @@ window.addEventListener("load", function () {
 
   for (let i in boxes) {
     dragElement(boxes[i]);
-    console.log(boxes[i]);
   }
 });
