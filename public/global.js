@@ -34,8 +34,10 @@ window.addEventListener("load", function () {
       pos4 = 0;
     if (document.getElementById(elmnt.id + "header")) {
       document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      document.getElementById(elmnt.id + "header").ontouchstart = dragMouseDown;
     } else {
       elmnt.onmousedown = dragMouseDown;
+      elmnt.ontouchstart = dragMouseDown;
     }
 
     function dragMouseDown(e) {
@@ -44,7 +46,9 @@ window.addEventListener("load", function () {
       pos3 = e.clientX;
       pos4 = e.clientY;
       document.onmouseup = closeDragElement;
+      document.ontouchend = closeDragElement;
       document.onmousemove = elementDrag;
+      document.ontouchmove = elementDrag;
     }
 
     function elementDrag(e) {
@@ -60,7 +64,9 @@ window.addEventListener("load", function () {
 
     function closeDragElement() {
       document.onmouseup = null;
+      document.ontouchend = null;
       document.onmousemove = null;
+      document.ontouchmove = null;
     }
   }
 
