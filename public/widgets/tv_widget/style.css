@@ -1,0 +1,142 @@
+@font-face { font-family: Tomorrow; src: url('fonts/Tomorrow/Tomorrow-Light.ttf'); }
+
+/* Scene for cube */
+.scene {
+  width: 100px;
+  height: 100px;
+  perspective: 600px;
+  mix-blend-mode: difference;
+  font-family: Tomorrow;
+}
+
+/* CUBE SETUP */
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.cube__face {
+  position: absolute;
+  width: 110px;
+  height: 100px;
+  border: 3px solid white;
+  line-height: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(55px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(55px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(55px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(55px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(50px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+.cube { transform: translateZ(-100px); }
+
+/* Main frame */
+.main_frame {
+  width: 200px;
+  height: 150px;
+  outline-color: white;
+  outline-style: outset;
+  align-content: center;
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  padding-top: 50px;
+  overflow: hidden;
+  outline-width: 3px;
+  z-index: auto;
+}
+
+/* Inner shape of the TV's face. */
+.tv_inner {
+  border: 3px solid white;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 10px;
+  text-align: center;
+}
+
+/* Body of the TV. */
+.tv_body {
+	border: 3px solid white;
+  transform: perspective(3px) rotateX(3deg);
+  top: 100%;
+	height: 50%;
+	width: 40%;
+  right: 25%;
+  background-color: black;
+  position: absolute;
+  opacity: 0;
+}
+
+/* Antennas of the TV. */
+.tv_antennas {
+  clip-path: polygon(12.62% 45.93%, 27.36% 64.15%, 22.31% 78.15%, 38.69% 78.15%, 50.03% 92.16%, 87.38% 45.93%, 91.47% 49.24%, 50.03% 99.93%, 34.6% 80.86%, 19.07% 80.86%, 22.31% 65.68%, 8.83% 49.01%);
+  background-color: white;
+  transform: rotateY(  0deg) translate3d(50%, -100px, 0px);
+  position: absolute;
+  right: 45%;
+  width: 100%;
+  height: 100%;
+}
+
+/* ANIMATION KEYFRAMES */
+
+@keyframes cube_idle {
+  from {transform: translate3d(-5px, 0px, 0px) rotateY(var(--look-angle-y)) rotateX(calc(var(--look-angle-x) + 1deg));}
+  to {transform: translate3d(-5px, 4px, 0px) rotateY(var(--look-angle-y)) rotateX(calc(var(--look-angle-x) - 1deg));} 
+}
+
+@keyframes cube_opening {
+  from {transform: translate3d(-5px, 200px, -100px) rotateX(999deg);}
+  to {transform: translate3d(-5px, 0px, 0px) rotateX(-1deg);}
+}
+
+@keyframes body_idle {
+  from {top: 100%;}
+  to {top: calc(100% + 4px)}
+}
+
+/* ANIMATION ELEMENT CLASSES */
+
+.tv_body.show {
+  transition: opacity 1.5s ease-in-out;
+  opacity: 1;
+  animation-name: body_idle;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+}
+
+.cube.start_opening {
+  animation-name: cube_opening;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  transform: translate3d(-5px, 0px, 0px) rotateX(0deg);
+}
+
+.cube.tv_idle {
+  animation-name: cube_idle;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transform: translate3d(-5px, 0px, 0px) rotateX(-1deg)
+}
