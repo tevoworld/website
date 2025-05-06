@@ -4,7 +4,7 @@ function redirect(url) {
 
 localStorage.currentpage = window.location.href;
 
-if (localStorage.name == "") {
+if (!localStorage.name) {
   redirect("index.html");
 }
 
