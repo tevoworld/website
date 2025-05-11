@@ -40,6 +40,6 @@ cube.style.setProperty('--look-angle-x', "0deg")
 cube.style.setProperty('--look-angle-y', "0deg")
 
 window.top.addEventListener('mousemove', function(event) {
-    cube.style.setProperty('--look-angle-x', `${Math.min(Math.max(-vertical_angle_limit, Math.atan2(-(event.pageY - cube_center.y), window.top.innerWidth / 2) * (180 / Math.PI)), vertical_angle_limit)}deg`);
-    cube.style.setProperty('--look-angle-y', `${Math.min(Math.max(-horizontal_angle_limit, Math.atan2(event.pageX - cube_center.x, window.top.innerHeight / 2) * (180 / Math.PI)), horizontal_angle_limit)}deg`);
+    cube.style.setProperty('--look-angle-x', `${Math.min(Math.max(-vertical_angle_limit, Math.atan2(-(event.clientY - cube_center.y), window.top.innerWidth / 2) * (180 / Math.PI)), vertical_angle_limit)}deg`);
+    cube.style.setProperty('--look-angle-y', `${Math.min(Math.max(-horizontal_angle_limit, Math.atan2(event.clientX - cube_center.x, window.top.innerHeight / 2) * (180 / Math.PI)), horizontal_angle_limit)}deg`);
 }, true);
