@@ -4,8 +4,13 @@ function redirect(url) {
 
 localStorage.currentpage = window.location.href;
 
-if (!localStorage.name) {
+if (localStorage.name == null || localStorage.name == "") {
   redirect("index.html");
+}
+
+function trigger_time_gate(e) {
+  localStorage.time_gate_target = e.target.getAttribute("time_gate_target");
+  redirect("time_gate.html");
 }
 
 window.addEventListener("load", function () {
@@ -27,52 +32,70 @@ window.addEventListener("load", function () {
     text.innerHTML = localStorage.name;
   }
 
+  var draggable_controller = new AbortController;
+
   function dragElement(elmnt) {
     var pos1 = 0,
       pos2 = 0,
       pos3 = 0,
       pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
-      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-      document.getElementById(elmnt.id + "header").ontouchstart = dragMouseDown;
+    if (document.getElementById(elmnt.id + "_header")) {
+      document.getElementById(elmnt.id + "_header").addEventListener("mousedown", dragMouseDown);
+      document.getElementById(elmnt.id + "_header").addEventListener("touchstart", dragMouseDown);
     } else {
-      elmnt.onmousedown = dragMouseDown;
-      elmnt.ontouchstart = dragMouseDown;
+      elmnt.addEventListener("mousedown", dragMouseDown);
+      elmnt.addEventListener("touchstart", dragMouseDown);
     }
 
     function dragMouseDown(e) {
-      e = e || window.event;
       e.preventDefault();
-      pos3 = e.clientX;
-      pos4 = e.clientY;
-      document.onmouseup = closeDragElement;
-      document.ontouchend = closeDragElement;
-      document.onmousemove = elementDrag;
-      document.ontouchmove = elementDrag;
+      if (e.type == "touchmove") {
+        pos3 = e.changedTouches[0].clientX;
+        pos4 = e.changedTouches[0].clientY;
+      } else {
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+      }
+      document.addEventListener("mouseup", closeDragElement, { signal: draggable_controller.signal, passive: false });
+      document.addEventListener("touchend", closeDragElement, { signal: draggable_controller.signal, passive: false });
+      document.addEventListener("mousemove", elementDrag, { signal: draggable_controller.signal, passive: false });
+      document.addEventListener("touchmove", elementDrag, { signal: draggable_controller.signal, passive: false });
     }
 
     function elementDrag(e) {
-      e = e || window.event;
       e.preventDefault();
-      pos1 = pos3 - e.clientX;
-      pos2 = pos4 - e.clientY;
-      pos3 = e.clientX;
-      pos4 = e.clientY;
+      if (e.type == "touchmove") {
+        pos1 = pos3 - e.changedTouches[0].clientX;
+        pos2 = pos4 - e.changedTouches[0].clientY;
+        pos3 = e.changedTouches[0].clientX;
+        pos4 = e.changedTouches[0].clientY;
+      } else {
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+      }
       elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
     }
 
     function closeDragElement() {
-      document.onmouseup = null;
-      document.ontouchend = null;
-      document.onmousemove = null;
-      document.ontouchmove = null;
+      draggable_controller.abort();
+      draggable_controller = new AbortController;
     }
   }
 
   boxes = document.getElementsByClassName("draggable_box");
 
-  for (let i in boxes) {
+  for (let i = 0; i < boxes.length; i++) {
     dragElement(boxes[i]);
+    
+  }
+
+  time_gates = document.getElementsByClassName("time_gate");
+
+  for (let i = 0; i < time_gates.length; i++) {
+    time_gates[i].addEventListener("mousedown", trigger_time_gate);
+    time_gates[i].addEventListener("touchstart", trigger_time_gate);
   }
 });
